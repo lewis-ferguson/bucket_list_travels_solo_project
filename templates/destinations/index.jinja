@@ -1,0 +1,21 @@
+{% extends 'base.jinja' %}
+
+{% block content %}
+
+{% for country  in countries %}
+    <div class="destination-container">
+        <h2 class="destination-container__title">{{ country.name }}</h2>
+        <h4>Cities</h4>
+    {% for city  in cities if city.country_id == country.id %}
+    <ul>
+        <li><{{ city.name }}</li>
+    </ul>
+    
+    {% endfor %}
+<a href="Add City"></a>    
+</div>
+{% endfor %}
+<h3></h3>
+
+
+{% endblock content %}

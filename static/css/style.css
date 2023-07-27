@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.home__title {
+    text-align: center;
+}
+
+.nav {
+    padding-left: 2rem;
+    padding-top: 2rem;
+}
+
+.nav > ul {
+    gap: 2rem;
+}
+
+.destination-container {
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.destination-container__title {
+    text-decoration: underline;
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Bucket List Travels</title>
+</head>
+<body>
+    <main>
+        <section class="nav">
+        <nav>
+            <ul>
+                <li><a href="/destinations">Destinations</a></li>
+                <li><a href="/my_list">My List</a></li>
+            </ul>
+        </nav>
+        </section>
+    <section class="content">
+    {% block content %}
+        
+    {% endblock content %}
+    </section>
+    </main>
+    
+</body>
+</html>
