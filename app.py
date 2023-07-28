@@ -12,12 +12,12 @@ from seed import seed
 app.cli.add_command(seed)
 
 # from controllers.city_controller import cities_blueprint
-# from controllers.country_controller import countries_blueprint
+from controllers.bucket_list_controller import bucket_list_blueprint
 from controllers.destinations_controller import destinations_blueprint
 
 
 app.register_blueprint(destinations_blueprint)
-# app.register_blueprint(countries_blueprint)
+app.register_blueprint(bucket_list_blueprint)
 
 
 @app.route('/')

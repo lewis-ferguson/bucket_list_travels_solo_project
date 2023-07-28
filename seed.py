@@ -1,5 +1,5 @@
 from app import db
-from models import City, Country, BucketListCities
+from models import City, Country, BucketList
 import click
 
 from flask.cli import with_appcontext
@@ -9,7 +9,7 @@ from flask.cli import with_appcontext
 def seed():
     City.query.delete()
     Country.query.delete()
-    BucketListCities.query.delete()
+    BucketList.query.delete()
     city1 = City(name="Edinburgh")
     city2 = City(name="Glasgow")
     city3 = City(name="London")

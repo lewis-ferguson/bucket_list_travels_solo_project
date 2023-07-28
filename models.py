@@ -17,8 +17,8 @@ class City(db.Model):
 
     
     
-class BucketListCities(db.Model):
-    __tablename__='bucket_list_cities'
+class BucketList(db.Model):
+    __tablename__='bucket_list'
     
     id = db.Column(db.Integer, primary_key= True)
     visited = db.Column(db.Boolean)

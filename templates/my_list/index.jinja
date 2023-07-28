@@ -1,0 +1,53 @@
+{% extends 'base.jinja' %}
+
+{% block header %}
+    <h1 class="title">My List</h1>
+{% endblock header %}
+
+{% block content %}
+<section class="form">
+    <form action="/my_list" method="post">
+        <label for="country">Select a country</label>
+        <select name="country" id="country">
+            {% for country in countries %}
+            <option value="{{country.id}}">{{ country.name }}</option>
+            {% endfor %}
+        </select>
+    <label for="city">Select a city</label>
+    <select>
+        {% for city in cities if city.country_id == request.form['country'] %}
+            <option value="{{city.name}}">{{ city.name }}</option>
+        {% endfor %}
+    </select>
+    <label for="visited">Have you visited?</label>
+    <input type="checkbox" name="visited">
+    <input type="submit" value="Add to list">
+    </form>
+</section>
+
+<section>
+<table>
+    <tr>
+        <th>Visited</th>
+    </tr>
+    <tr>
+        <td>{% for item in bucket_list if item.visted == True  %}
+            {{ item.id }} {{ item.visited }}
+        {% endfor %}</td>
+    </tr>
+</table>
+
+<table>
+    <tr>
+        <th>Not Visited</th>
+    </tr>
+    <tr>
+        <td>{% for item in bucket_list if item.visted != True  %}
+            {{ item.id }} {{ item.visited }}
+        {% endfor %}</td>
+    </tr>
+</table>
+
+</section>
+
+{% endblock content %}
