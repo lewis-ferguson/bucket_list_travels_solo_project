@@ -5,23 +5,34 @@
 {% endblock header %}
 
 {% block content %}
+<div class="destinations-page-content">
+    <section class="form add-country-form">
+    <form action="/destinations" method="post">
+        <label for="country">Enter a country</label>
+        <input type="text" name="country" id="country" autofocus required>
+    <input type="submit" value="Add Country" class="button add-country-button">
+    </form>
+</section>
+
 <div class="destination-containers">
 {% for country  in countries %}
     <div class="destination-container">
         <h2 class="destination-container__title">{{ country.name }}</h2>
         <h4 class="destination-container__header">Cities</h4>
     {% for city  in cities if city.country_id == country.id %}
-    <ul>
+    <ul class="cities_list">
         <li>{{ city.name }}</li>
-        <form action="/destinations/{{ cities.id }}/delete" method="POST">
+        <form action="/destinations/{{ city.id }}/delete" method="POST">
             <input class="button__delete" type="submit" value="Delete" />
         </form>
     </ul>
     
     {% endfor %}
     <a href="/destinations/add">Add City</a>    
+    <a href="/destinations/{{country.id}}">Edit Country</a>    
     </div>
 {% endfor %}
+</div>
 </div>
 
 {% endblock content %}

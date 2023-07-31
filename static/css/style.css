@@ -4,6 +4,7 @@
     list-style: none;
 }
 
+
 a {
     color: white;
   }
@@ -18,19 +19,30 @@ body{
     background: url('/static/images/background-image.avif');
     background-size: cover;
     background-repeat: no-repeat;
-    color: white;
+    color: rgb(255, 255, 255);
 }
 
 .title {
     text-align: center;
+    font-size: 4rem;
 }
+/* 
+main {
+    display: flex;
+    align-items: center;
+    padding-top: 5rem;
+    justify-content: space-between;
+} */
 
 .nav {
     padding-left: 2rem;
-    padding-top: 2rem;
     text-align: left;
     max-width: fit-content;
+    margin: 0;
+    display: flex;
+
 }
+
 
 .nav ul {
     display: flex;
@@ -52,6 +64,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 2rem;
 }
 
 .hero__title {
@@ -77,13 +90,13 @@ body{
 }
 
 .button {
-    background-color: #c3bc95;
+    background-color: #999475;
     color: black;
     border-radius: 5px;
     padding:16px 32px;
     font-weight: bold;
     border-style: none;
-    width: 150px;
+    width: 150px;   
 }
 
 /* .button--secondary {
@@ -99,19 +112,67 @@ body{
 
 }
 
+.destinations-page-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
 .destination-containers {
     display: flex;
     justify-content: center;
     flex-wrap:wrap;
     gap:3rem;
-    padding-left: 5rem;
+}
+
+.add-country.button {
+    display: flex;
+    justify-content: center;
 }
 
 .destination-container__header {
 padding-top: 1rem;
+padding-bottom: 0.5rem;
+}
+
+.destination-container__title {
+    text-align: center;
 }
 
 .destination-container > ul {
     display: flex;
     justify-content: space-between;
+}
+
+.my_list-form {
+    display: flex;
+    justify-content: center;
+    padding-top: 6rem;
+    font-size: 1.75rem;
+}
+
+
+.visited-lists {
+   display: flex;
+   justify-content: center;
+   gap: 6rem;
+   padding-top: 3rem;
+   text-align: center;
+   font-size: 2rem;
+}
+
+.visited-lists-header {
+    text-decoration: underline;
+}
+
+input.checkbox {
+    width: 2rem;
+    height: 2rem;
+}
+
+.edit-country-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

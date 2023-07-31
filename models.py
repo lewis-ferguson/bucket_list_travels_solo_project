@@ -22,5 +22,6 @@ class BucketList(db.Model):
     
     id = db.Column(db.Integer, primary_key= True)
     visited = db.Column(db.Boolean)
+    name = db.Column(db.String(64)) #testing
     city_id = db.ForeignKey('cities_id')
         
