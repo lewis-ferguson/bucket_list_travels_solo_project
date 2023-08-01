@@ -1,35 +1,44 @@
 {% extends 'base.jinja' %}
 
 {% block header %}
-    <h1 class="destinations__title title">Destinations</h1>
+    <h1 class="destinations__title title">Destinations</h1> 
+    <section class="form search-country-form">
+        <form action="/destinations/search" method="post">
+            <input type="text" name="search_country" id="search_country" placeholder="Enter country name" required>
+            <input type="submit" value="Search" class="button search-country-button">
+        </form>
+    </section>
 {% endblock header %}
 
 {% block content %}
 <div class="destinations-page-content">
     <section class="form add-country-form">
     <form action="/destinations" method="post">
-        <label for="country">Enter a country</label>
+        <label for="country">Add a country</label>
         <input type="text" name="country" id="country" autofocus required>
-    <input type="submit" value="Add Country" class="button add-country-button">
+    <input type="submit" value="Add" class="button add-country-button">
     </form>
-</section>
+    </section>
 
-<div class="destination-containers">
-{% for country  in countries %}
-    <div class="destination-container">
-        <h2 class="destination-container__title">{{ country.name }}</h2>
-        <h4 class="destination-container__header">Cities</h4>
-    {% for city  in cities if city.country_id == country.id %}
-    <ul class="cities_list">
-        <li>{{ city.name }}</li>
-        <form action="/destinations/{{ city.id }}/delete" method="POST">
-            <input class="button__delete" type="submit" value="Delete" />
-        </form>
-    </ul>
+    <div class="destination-containers">    
+        {% for country in countries %}
+        <div class="destination-container">
+            <h2 class="destination-container__title">{{ country.name }}</h2>
+            <h4 class="destination-container__header">Cities</h4>
+                {% for city  in country.cities %}
+        <ul class="cities_list">
+            <li>{{ city.name }}</li>
+            <form action="/destinations/{{ city.id }}/delete" method="POST">
+                <input class="button__delete" type="submit" value="Delete" />
+            </form>
+        </ul>
     
     {% endfor %}
-    <a href="/destinations/add">Add City</a>    
-    <a href="/destinations/{{country.id}}">Edit Country</a>    
+    
+    <div class="add-edit-links">
+    <a href="/destinations/{{country.name}}">Edit Country</a>    
+    
+    </div> 
     </div>
 {% endfor %}
 </div>

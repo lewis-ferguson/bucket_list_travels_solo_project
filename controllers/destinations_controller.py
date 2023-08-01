@@ -20,9 +20,9 @@ def add_country():#add a country
     db.session.commit()
     return redirect('/destinations')
 
-@destinations_blueprint.route('/destinations/<id>')#show individual country
-def show_country(id):
-    chosen_country = Country.query.get(id)
+@destinations_blueprint.route('/destinations/<country_name>')#show individual country
+def show_country(country_name):
+    chosen_country = Country.query.filter(Country.name.ilike(country_name)).first()
     return render_template('/destinations/show.jinja', title="Destination" ,country = chosen_country)
 
 
@@ -34,7 +34,26 @@ def edit_country(id): #Post method to update country
     db.session.commit()
     return redirect('/destinations')
 
-# @destinations.route('/destinations/<city_id>/delete', methods=['POST'])
-# def delete(city_id):
-#   remove_city(city_id)
-#   return redirect('/destinations')  #remove a city
+@destinations_blueprint.route("/destinations/<id>/add-city",  methods=['POST'])
+def add_city(id):#add a city to a country
+    country = Country.query.get(id)
+    city_name = request.form['city']
+    country_id = country.id
+    new_city = City(name = city_name, country_id = country_id)
+    db.session.add(new_city)
+    db.session.commit()
+    return redirect('/destinations')
+
+@destinations_blueprint.route('/destinations/<city_id>/delete', methods=['POST'])
+def delete(city_id):#deletes a city
+    city = City.query.get(city_id)
+    db.session.delete(city)
+    db.session.commit()
+    return redirect('/destinations')  #remove a city
+
+@destinations_blueprint.route('/destinations/search', methods=['POST'])
+def search():#show a country by search
+    country_name = request.form['search_country']
+    # country = Country.query.filter_by(name=country_name).first()
+    return redirect(f'/destinations/{country_name}')
+    

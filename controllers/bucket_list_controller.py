@@ -24,5 +24,13 @@ def add_to_list():
     db.session.commit()
     return redirect('/my_list')
 
+
+@bucket_list_blueprint.route('/my_list/<id>/toggle-visit', methods=['POST'])
+def update_visited(id):
+    item = BucketList.query.get(id)
+    item.visited = not (item.visited)
+    db.session.commit()
+    return redirect('/my_list')
+
 #.route(/my_list/add) when 'submit button is pressed
 

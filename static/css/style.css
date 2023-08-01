@@ -126,11 +126,6 @@ main {
     gap:3rem;
 }
 
-.add-country.button {
-    display: flex;
-    justify-content: center;
-}
-
 .destination-container__header {
 padding-top: 1rem;
 padding-bottom: 0.5rem;
@@ -145,11 +140,36 @@ padding-bottom: 0.5rem;
     justify-content: space-between;
 }
 
-.my_list-form {
+.search-country-form {
     display: flex;
     justify-content: center;
-    padding-top: 6rem;
+}
+
+.search-country-form form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.search-country-button {
+    padding: 0.5rem;
+    width: 100px;
+}
+
+.add-country-button {
+    padding: 0.5rem;
+    width: 50px;
+}
+
+.my_list-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     font-size: 1.75rem;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 
@@ -176,3 +196,16 @@ input.checkbox {
     flex-direction: column;
     align-items: center;
 }
+
+.add-edit-links {
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 0.5rem;
+}
+
+/* .cities_list {
+    display: flex;
+    flex-direction: column;
+} */
