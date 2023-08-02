@@ -1,4 +1,4 @@
--Title Bucket List Travels
+#Heading 1 Title Bucket List Travels
 
 The aim of the website is to allow users to view different countries and find out which cities they contain, and also allow the user to add them to their bucket list, and check off which destinations have been visited, and which ones are still to be visited.
 
@@ -11,18 +11,27 @@ On the bucket list page, they can choose from the list of countries that are ava
 
 The website was made using HTML, CSS and Python(with flask ,SQLAlchemy and PostgreSQL).
 To run this project, you will need to install SQLAlchemy and Migrate.
-In the terminal:
-```pip3 install flask-sqlalchemy```
-```pip3 install flask-migrate```
-```createdb bucket_list```
-```flask db init```
-```flask db migrate```
-```flask db upgrade```
+In the terminal:  
 
-To populate the database, I have included a seed.py file that contains data for Countries and Cities. To run this, type into the terminal:
+```pip3 install flask-sqlalchemy```  
+
+```pip3 install flask-migrate```  
+
+```createdb bucket_list```  
+
+```flask db init```  
+
+```flask db migrate```  
+
+```flask db upgrade```  
+
+
+To populate the database, I have included a seed.py file that contains data for Countries and Cities. To run this, type into the terminal:  
+
 ```flask seed```
 
-Finally, to run the server, use:
+Finally, to run the server, use:  
+
 ```flask run```
 
 
@@ -32,6 +41,8 @@ Figma was used to design a logo for my home page.
 PLANNING -
 
 I started off by drawing class diagrams to ensure I had an understanding of the relationships between the classes.
+
+<img src ="/static/images/class_diagrams.jpg" width=500px height=500px></img>
 
 ![class diagram](/static/images/class_diagrams.jpg)
 
