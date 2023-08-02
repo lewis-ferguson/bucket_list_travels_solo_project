@@ -1,25 +1,28 @@
 {% extends 'base.jinja' %}
 
 {% block header %}
-    <h1 class="home__title title">Welcome to Bucket List travels!</h1>
+<h1 class="home__title title">Welcome to Bucket List travels!</h1>
 {% endblock header %}
 
 {% block content %}
-      <section class="hero">
-        <div class="container hero__container">
-            <div class="hero__left">
-                <h1 class="hero__title">Check out our <span     class="hero__title--span">Destinations</span> for your bucket list!</h1>
-                <p class="hero__paragraph">Your dream visit is waiting for you!<p>
-                <div class="button-wrapper">
-                    <button class="button"><a href="/destinations">Destinations</a></button>
-                    <button class="button button--secondary"><a href="/my_list">My List</a></button>
-                </div>
-            </div>
-
-            <div class="hero__image">
-                <img src="/static/images/Ellipse 1.svg" />
+<section class="hero">
+    <div class="container hero__container">
+        <div class="hero__left">
+            <h1 class="hero__title">Check out our <span class="hero__title--span">Destinations</span> for your bucket
+                list!</h1>
+            <p class="hero__paragraph">Your dream visit is waiting for you!
+            <p>
+            <div class="button-wrapper">
+                <button class="button"><a href="/destinations">Destinations</a></button>
+                <button class="button button--secondary"><a href="/my_list">My List</a></button>
             </div>
         </div>
 
-    </section>
+        <div class="hero__image">
+            <img src="/static/images/Ellipse 1.svg" />
+        </div>
+    </div>
+
+</section>
+
 {% endblock content %}

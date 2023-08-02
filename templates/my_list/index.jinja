@@ -1,69 +1,69 @@
 {% extends 'base.jinja' %}
 
 {% block header %}
-    <h1 class="title">My Bucket List</h1>
+<h1 class="title">My Bucket List</h1>
 {% endblock header %}
 
 {% block content %}
 <section class="form">
     <form action="/my_list" method="post" class="my_list-form">
         <div class="my_list-form-containers">
-        <label for="country">Select a country</label>
-        <select name="country" id="country" autofocus required>
-            {% for country in countries %}
-            <option value="{{country.id}}">{{ country.name }}</option>
-            {% endfor %}
-        </select>
+            <label for="country">Select a country</label>
+            <select name="country" id="country" autofocus required>
+                {% for country in countries %}
+                <option value="{{country.id}}">{{ country.name }}</option>
+                {% endfor %}
+            </select>
         </div>
 
-    <div class="my_list-form-containers">
-    <label for="city">Select a city</label>
-    <select name="city" id="city">
-    {# trying to display the list of cities for the chosen country in the select box before this one #}
-        {% for city in cities %}
-            <option value="{{city.name}}">{{ city.name }}</option>
-        {% endfor %}
-    </select>
-    </div>
+        <div class="my_list-form-containers">
+            <label for="city">Select a city</label>
+            <select name="city" id="city">
+                {# trying to display the list of cities for the chosen country in the select box before this one #}
+                {% for city in cities %}
+                <option value="{{city.name}}">{{ city.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
 
-    <div class="my_list-form-containers">
-    <label for="visited">Have you visited?</label>
-    <input type="checkbox" name="visited" value="True">
-    </div>
+        <div class="my_list-form-containers">
+            <label for="visited">Have you visited?</label>
+            <input type="checkbox" name="visited" value="True">
+        </div>
 
-    <input type="submit" value="Add to list" class="button add-to-list-button">
-    
+        <input type="submit" value="Add to list" class="button add-to-list-button">
+
     </form>
 </section>
 
 <section class="visited-lists">
 
-<ul>
-<h2 class="visited-lists-header">Visited</h2>
-    {% for item  in bucket_list if item.visited == True %}
-    <li>
-    <form action="/my_list/{{item.id}}/toggle-visit" method="post">
-        {{ item.name }} 
-        <input type="checkbox" checked class="checkbox" onchange="this.form.submit()">
-        </form>
-    {% endfor %}
-    </li>
-</ul>
+    <ul>
+        <h2 class="visited-lists-header">Visited</h2>
+        {% for item in bucket_list if item.visited == True %}
+        <li>
+            <form action="/my_list/{{item.id}}/toggle-visit" method="post">
+                {{ item.name }}
+                <input type="checkbox" checked class="checkbox" onchange="this.form.submit()">
+            </form>
+            {% endfor %}
+        </li>
+    </ul>
 
-<ul>
+    <ul>
 
-<h2 class="visited-lists-header">Not Visited</h2>
+        <h2 class="visited-lists-header">Not Visited</h2>
 
-    {% for item  in bucket_list if item.visited != True %}
-    <li>
-    <form action="/my_list/{{item.id}}/toggle-visit" method="post">
-        {{ item.name }} 
-        <input type="checkbox" class="checkbox" onchange="this.form.submit()">
-        </form>
-    {% endfor %}
-    
-    </li>
-</ul>
+        {% for item in bucket_list if item.visited != True %}
+        <li>
+            <form action="/my_list/{{item.id}}/toggle-visit" method="post">
+                {{ item.name }}
+                <input type="checkbox" class="checkbox" onchange="this.form.submit()">
+            </form>
+            {% endfor %}
+
+        </li>
+    </ul>
 
 </section>
 

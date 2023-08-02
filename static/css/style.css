@@ -129,10 +129,18 @@ main {
 .destination-container__header {
 padding-top: 1rem;
 padding-bottom: 0.5rem;
+font-size: 2rem;
 }
+
+.destinations-container__city {
+    font-size: 1.5rem;
+
+}
+
 
 .destination-container__title {
     text-align: center;
+    font-size: 3rem;
 }
 
 .destination-container > ul {
@@ -204,8 +212,3 @@ input.checkbox {
     justify-content: space-evenly;
     gap: 0.5rem;
 }
-
-/* .cities_list {
-    display: flex;
-    flex-direction: column;
-} */

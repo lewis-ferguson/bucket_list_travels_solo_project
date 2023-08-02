@@ -1,40 +1,40 @@
 {% extends 'base.jinja' %}
 
 {% block header %}
-    <h1 class="destinations__title title">Destination</h1>
+<h1 class="destinations__title title">Destination</h1>
 {% endblock header %}
 
 {% block content %}
-    <div class="destination-containers edit-country-container">
+<div class="destination-containers edit-country-container">
 
-        <div class="destination-container">
-            <h2 class="destination-container__title">{{ country.name }}</h2>
-            <h4 class="destination-container__header">Cities</h4>
-        
-    {% for city  in country.cities %}
-    <ul class="cities_list">
-        <li>{{ city.name }}</li>
-        <form action="/destinations/{{ city.id }}/delete" method="POST">
-            <input class="button__delete" type="submit" value="Delete" />
-        </form>
-    </ul>
-    {% endfor %}
-        
-        </div>
-        <form action="/destinations/{{country.id}}" method="post">
-            <label for="country">Country Name:</label>
-            <input name="country" type="string" id="country" value="{{country.name}}"/>
-            <button type="submit" class="button">Edit Country</button>
-        </form>
+    <div class="destination-container">
+        <h2 class="destination-container__title">{{ country.name }}</h2>
+        <h4 class="destination-container__header">Cities</h4>
 
-        
-        <form action="/destinations/{{country.id}}/add-city" method="post">
-            <label for="city">City Name:</label>
-            <input name="city" type="string" id="city"/>
-            <button type="submit" class="button">Add a city</button>
-        </form>
+        {% for city in country.cities %}
+        <ul class="cities_list">
+            <li>{{ city.name }}</li>
+            <form action="/destinations/{{ city.id }}/delete" method="POST">
+                <input class="button__delete" type="submit" value="Delete" />
+            </form>
+        </ul>
+        {% endfor %}
 
     </div>
+    <form action="/destinations/{{country.id}}" method="post">
+        <label for="country">Country Name:</label>
+        <input name="country" type="string" id="country" value="{{country.name}}" />
+        <button type="submit" class="button">Edit Country</button>
+    </form>
+
+
+    <form action="/destinations/{{country.id}}/add-city" method="post">
+        <label for="city">City Name:</label>
+        <input name="city" type="string" id="city" />
+        <button type="submit" class="button">Add a city</button>
+    </form>
+
+</div>
 
 
 
