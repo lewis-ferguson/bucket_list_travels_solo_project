@@ -9,7 +9,7 @@ On the bucket list page, they can choose from the list of countries that are ava
 
 
 
-The website was made using HTML, CSS and Python(with flask and SQLAlchemy).
+The website was made using HTML, CSS and Python(with flask ,SQLAlchemy and PostgreSQL).
 To run this project, you will need to install SQLAlchemy and Migrate.
 In the terminal:
 ```pip3 install flask-sqlalchemy```
@@ -46,5 +46,23 @@ TRELLO
 To help break down my project into smaller, more manageable chunks, I used trello. This was helpful to track tasks that still needed to be done, what I was in the process of doing and what I had completed.
 
 ![trello planning](/static/images/trello.png)
+
+
+
+
+A coding problem I solved:
+
+I couldn't figure out how to make the cities change to either the visited, or not-visited tables when the checkbox was checked or unchecked.
+
+By wrapping the checkbox in a form, and using the line 
+```onchange="this.form.submit()``` as a property of the checkbox,
+this allows the checkbox to essentially act as a submit button.
+When the checkbox is then clicked, the form actions ```/my_list/{{item.id}}/toggle-visit```.
+I then made a route with a post method which has a function to update the visited value of the city that was checked or unchecked.
+The line ```item.visited = not (item.visited)``` will return the opposite value, so if the Value is True, it will return false, and be committed to the database, and finally a redirect to the same page, so this will happen seamlessly.
+
+![coding problem solved](/static/images/coding_problem_solved.png)
+
+
 
 

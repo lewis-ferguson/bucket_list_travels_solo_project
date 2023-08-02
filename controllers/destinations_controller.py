@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect
 from flask import Blueprint
-from models import City, Country, BucketList
+from models.models import City, Country, BucketList
 from app import db
 
 destinations_blueprint = Blueprint("destinations", __name__)

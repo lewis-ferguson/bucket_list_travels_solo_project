@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect
 from flask import Blueprint
-from models import City, Country, BucketList
+from models.models import City, Country, BucketList
 from app import db
 
 bucket_list_blueprint = Blueprint("bucket_list", __name__)
@@ -32,5 +32,4 @@ def update_visited(id):
     db.session.commit()
     return redirect('/my_list')
 
-#.route(/my_list/add) when 'submit button is pressed
 

@@ -1,5 +1,5 @@
 from app import db
-from models import City, Country, BucketList
+from models.models import City, Country, BucketList
 import click
 
 from flask.cli import with_appcontext
