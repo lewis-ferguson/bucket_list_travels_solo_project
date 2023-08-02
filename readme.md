@@ -1,4 +1,4 @@
-#Heading 1 Title Bucket List Travels
+#Heading1 Title Bucket List Travels
 
 The aim of the website is to allow users to view different countries and find out which cities they contain, and also allow the user to add them to their bucket list, and check off which destinations have been visited, and which ones are still to be visited.
 
@@ -42,15 +42,15 @@ PLANNING -
 
 I started off by drawing class diagrams to ensure I had an understanding of the relationships between the classes.
 
-<img src ="/static/images/class_diagrams.jpg" width=500px height=500px></img>
+<img src ="/static/images/class_diagrams.jpg" width=500px height=500px/>
 
-![class diagram](/static/images/class_diagrams.jpg)
 
 I then moved on to drawing a wireframe for each page to get a rough idea of how I wanted my website to look, as you can see, as I have worked on my website I have made some changes to the original plan.
 
-![home wireframe](/static/images/home_wireframe.jpg)
-![destinations wireframe](/static/images/destinations_wireframe.jpg)
-![bucket list wireframe](/static/images/bucket_list_wireframe.jpg)
+<img src ="/static/images/home_wireframe.jpg" width=500px height=500px/>
+<img src ="/static/images/destinations_wireframe.jpg" width=500px height=500px/>
+<img src ="/static/images/bucket_list_wireframe.jpg" width=500px height=500px/>
+
 
 TRELLO
 
@@ -65,12 +65,19 @@ A coding problem I solved:
 
 I couldn't figure out how to make the cities change to either the visited, or not-visited tables when the checkbox was checked or unchecked.
 
-By wrapping the checkbox in a form, and using the line 
-```onchange="this.form.submit()``` as a property of the checkbox,
-this allows the checkbox to essentially act as a submit button.
-When the checkbox is then clicked, the form actions ```/my_list/{{item.id}}/toggle-visit```.
+By wrapping the checkbox in a form, and using the line  
+
+```onchange="this.form.submit()```  
+
+as a property of the checkbox, this allows the checkbox to essentially act as a submit button.
+When the checkbox is then clicked, the form actions  
+```/my_list/{{item.id}}/toggle-visit```  
+
 I then made a route with a post method which has a function to update the visited value of the city that was checked or unchecked.
-The line ```item.visited = not (item.visited)``` will return the opposite value, so if the Value is True, it will return false, and be committed to the database, and finally a redirect to the same page, so this will happen seamlessly.
+The line  
+```item.visited = not (item.visited)```  
+ 
+will return the opposite value, so if the Value is True, it will return false, and be committed to the database, and finally a redirect to the same page, so this will happen seamlessly.
 
 ![coding problem solved](/static/images/coding_problem_solved.png)
 
