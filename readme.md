@@ -48,7 +48,8 @@ When implementing css into my website, I had a play around with many different s
 <img src ="/static/images/home_wireframe.jpg" width=500px height=500px/>  
 
 Figma was used to design a logo for my home page.
-<img src ="/static/images/figma_logo.png" width=500px height=500px/> 
+
+<img src ="/static/images/figma_logo.png" width=800px height=500px/> 
 
 My destinations page has pretty much stayed identical except I decided to make the add country form part of this page, instead of being redirected to another page.
 There is no search bar here as I planned for the MVP, and the search bar was an extension.  
