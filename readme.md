@@ -1,6 +1,4 @@
-#
-
-Title Bucket List Travels
+# Title Bucket List Travels
 
 The aim of the website is to allow users to view different countries and find out which cities they contain, and also allow the user to add them to their bucket list, and check off which destinations have been visited, and which ones are still to be visited.
 
@@ -35,7 +33,7 @@ Finally, to run the server, use:
 
 
 
-PLANNING -
+## PLANNING -
 
 I started off by drawing class diagrams to ensure I had an understanding of the relationships between the classes.
 Each country can have many cities, so city has the foreign key country_id, which links these 2 tables together.
@@ -69,19 +67,19 @@ My Bucket List page has also stayed very similar, but again I kept the add to bu
 <img src ="/static/images/bucket_list_wireframe.jpg" width=500px height=500px/>
 
 
-USER CASE DIAGRAM:
+## USER CASE DIAGRAM:
 
 After creating the wireframes, I created a user case diagram to determine what routes I would need to create and for which pages I would need to create them for.
 
 ![user case diagram](/static/images/user_case_diagram.png)
 
-USER SITEMAP :
+## USER SITEMAP :
 
 I then created a user sitemap to determine the structure of the website so it was clear, and easy to navigate for the user.
 
 ![user sitemap](/static/images/user_sitemap.png)
 
-TRELLO
+## TRELLO
 
 To help break down my project into smaller, more manageable chunks, I used trello. This was helpful to track tasks that still needed to be done, what I was in the process of doing and what I had completed.
 
@@ -113,7 +111,7 @@ will return the opposite value, so if the Value is True, it will return false, a
 
 
 
-MAIN LEARNING POINTS: 
+## MAIN LEARNING POINTS: 
 -Getting a lot more confident with setting up routes and knowing which routes I need.
 -Confident with using template inheritance and conditional rendering as I wasn't so confident with that before this project.
 -I made a lot of mistakes throughout the project and came across many errors and bugs, so I feel I have greatly improved on debugging my code and I look at errors as a challenge and an opportunity to learn.
