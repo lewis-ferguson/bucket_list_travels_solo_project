@@ -1,4 +1,4 @@
-#Heading1 Title Bucket List Travels
+#Title Bucket List Travels
 
 The aim of the website is to allow users to view different countries and find out which cities they contain, and also allow the user to add them to their bucket list, and check off which destinations have been visited, and which ones are still to be visited.
 
